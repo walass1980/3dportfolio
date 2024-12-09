@@ -83,6 +83,12 @@ const Hero = () => {
        </div>
       </a>
       </div>
+      <div className="bg">
+        {/* 3d */}
+        <div className="hImg">
+          <img src="/hero.png" alt="" />
+        </div>
+      </div>
     </div>
   )
 }
