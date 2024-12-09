@@ -7,7 +7,7 @@ const Hero = () => {
         <h1 className="hTitle">
           Hey There,
           <br />
-          <span>I'm Walid!</span>
+          <span>I m Walid!</span>
         </h1>
         {/*AWARDS*/}
         <div className="awards">
