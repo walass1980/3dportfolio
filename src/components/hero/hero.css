@@ -49,3 +49,26 @@
     margin-bottom: 50px;
     width: max-content;
 }
+
+.hSection.right {
+    align-items: end;
+}
+
+.follow {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background-color: #2f204e;
+    border-bottom-right-radius: 10px;
+}
+
+.follow img {
+    width: 20px;
+    height: 20px;
+}
+
+.followTextContainer {
+    width: 20px;
+    height: 20px;
+}
