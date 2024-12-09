@@ -1,4 +1,5 @@
 import "./hero.css"
+import Speech from "./Speech"
 const Hero = () => {
   return (
     <div className='hero'>
@@ -53,6 +54,7 @@ const Hero = () => {
         </div>
       </div>
       {/*BUBBLE */}
+      <Speech />
       {/*CERTIFICATE */}
       <div className="certificate">
         <img src="/certificate.png" alt="" />
