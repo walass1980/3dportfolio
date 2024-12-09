@@ -36,7 +36,53 @@ const Hero = () => {
         </svg>
         </a>
       </div>
-      <div className="hSection right"></div>
+      <div className="hSection right">
+      {/*FOLLOW */}
+      <div className="follow">
+        <a href="/">
+         <img src="/instagram.png" alt="" />
+        </a>
+        <a href="/">
+         <img src="/facebook.png" alt="" />
+        </a>
+        <a href="/">
+         <img src="/youtube.png" alt="" />
+        </a>
+        <div className="followContainer">
+          <div className="followTextContainer">FOLLOW ME</div>
+        </div>
+      </div>
+      {/*BUBBLE */}
+      {/*CERTIFICATE */}
+      <div className="certificate">
+        <img src="/certificate.png" alt="" />
+        WALASS CERTIFICATE
+        <br />
+        PROFESSIONAL
+        <br />
+        UI DESIGNER
+      </div>
+      <a href="/#contact" className="contactLink">
+       <div className="contactButton">
+       <svg viewBox="0 0 200 200" width="150" height="150">
+              <circle cx="100" cy="100" r="90" fill="pink" />
+              <path
+                id="innerCirclePath"
+                fill="none"
+                d="M 100,100 m -60,0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0"
+              />
+              <text className="circleText">
+                <textPath href="#innerCirclePath">Hire Now •</textPath>
+              </text>
+              <text className="circleText">
+                <textPath href="#innerCirclePath" startOffset="44%">
+                  Contact Me •
+                </textPath>
+              </text>
+        </svg>
+       </div>
+      </a>
+      </div>
     </div>
   )
 }
