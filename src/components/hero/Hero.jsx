@@ -48,8 +48,8 @@ const Hero = () => {
         <a href="/">
          <img src="/youtube.png" alt="" />
         </a>
-        <div className="followContainer">
-          <div className="followTextContainer">FOLLOW ME</div>
+        <div className="followTextContainer">
+          <div className="followText">FOLLOW ME</div>
         </div>
       </div>
       {/*BUBBLE */}

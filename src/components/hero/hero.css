@@ -72,3 +72,14 @@
     width: 20px;
     height: 20px;
 }
+
+.followText {
+    background-color: #dd4c62;
+    font-size: 12px;
+    rotate: 90deg;
+    width: max-content;
+    height: 100%;
+    transform-origin: left top;
+    transform: translate(-20px);
+    padding: 0px 8px;
+}
