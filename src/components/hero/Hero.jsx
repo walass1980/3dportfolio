@@ -20,7 +20,7 @@ const Hero = () => {
           </div>
         </div>
         {/*SCROLL SVG */}
-        <a href="#services">
+        <a href="#services" className="scroll">
         <svg
             width="50px"
             height="50px"

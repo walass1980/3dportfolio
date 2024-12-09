@@ -36,3 +36,16 @@
     display: flex;
     gap: 8px;
 }
+
+.awardList img {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.scroll {
+    margin-bottom: 50px;
+    width: max-content;
+}
