@@ -25,3 +25,14 @@
 .awards {
     width: 30%;
 }
+
+.awards p {
+    font-size: 14px;
+    color: #ddd;
+    margin: 16px 0px;
+}
+
+.awardList {
+    display: flex;
+    gap: 8px;
+}
