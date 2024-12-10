@@ -16,6 +16,21 @@ const awardVariants = {
   },
 };
 
+const followVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 const Hero = () => {
   return (
     <div className='hero'>
