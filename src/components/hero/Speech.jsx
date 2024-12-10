@@ -3,7 +3,11 @@ import { motion } from "motion/react"
 
 const Speech = () => {
   return (
-    <motion.div className="bubbleContainer">
+    <motion.div 
+    className="bubbleContainer"
+    animate={{ opacity: [0, 1] }}
+    transition={{ duration: 1 }}
+    >
         <div className="bubble">
         <TypeAnimation
           sequence={[
