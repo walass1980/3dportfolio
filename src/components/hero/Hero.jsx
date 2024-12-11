@@ -65,7 +65,16 @@ const Hero = () => {
           </motion.div>
         </motion.div>
         {/*SCROLL SVG */}
-        <a href="#services" className="scroll">
+        <motion.a 
+         animate={{ y:[0, 5], opacity:[0, 1, 0]}}
+         transition={{
+          repeat:Infinity,
+          duration:4,
+          ease:"easeInOut"
+         }}
+         href="#services" 
+         className="scroll"
+        >
         <svg
             width="50px"
             height="50px"
@@ -78,8 +87,20 @@ const Hero = () => {
               stroke="white"
               strokeWidth="1"
             />
+            <motion.path
+              animate={{ y: [0, 5] }}
+              transition={{
+                repeat: Infinity,
+                duration: 4,
+                ease: "easeInOut",
+              }}
+              d="M12 5V8"
+              stroke="white"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
         </svg>
-        </a>
+        </motion.a>
       </div>
       <div className="hSection right">
       {/*FOLLOW */}
