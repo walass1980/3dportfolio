@@ -66,7 +66,7 @@ const Hero = () => {
         </motion.div>
         {/*SCROLL SVG */}
         <motion.a 
-         animate={{ y:[0, 5], opacity:[0, 1, 0]}}
+         animate={{ y:[0, 5], opacity:[0, 1, 0] }}
          transition={{
           repeat:Infinity,
           duration:4,
@@ -127,8 +127,8 @@ const Hero = () => {
       <Speech />
       {/*CERTIFICATE */}
       <motion.div 
-       animate={{opacity: [0, 1] }}
-       transition={{ duration:1}}
+       animate={{ opacity: [0, 1] }}
+       transition={{ duration:1 }}
        className="certificate"
       >
         <img src="/certificate.png" alt="" />
