@@ -39,8 +39,9 @@ const Hero = () => {
         {/*TITLE*/}
         <motion.h1 
         className="hTitle"
-        initial= {{x:-100, opacity:0}}
-        
+        initial= {{y:-100, opacity:0}}
+        animate= {{y:0, opacity:1}}
+        transition={{duration:1}}
         >
           Hey There,
           <br />
