@@ -126,15 +126,29 @@ const Hero = () => {
       {/*BUBBLE */}
       <Speech />
       {/*CERTIFICATE */}
-      <div className="certificate">
+      <motion.div 
+       animate={{opacity: [0, 1] }}
+       transition={{ duration:1}}
+       className="certificate"
+      >
         <img src="/certificate.png" alt="" />
         WALASS CERTIFICATE
         <br />
         PROFESSIONAL
         <br />
         UI DESIGNER
-      </div>
-      <a href="/#contact" className="contactLink">
+      </motion.div>
+      <motion.a 
+       href="/#contact" 
+       className="contactLink"
+       animate={{
+        x:[0, 200],
+        opacity:[0, 1]
+       }}
+       transition={{
+        duration:2
+       }}
+      >
        <div className="contactButton">
        <svg viewBox="0 0 200 200" width="150" height="150">
               <circle cx="100" cy="100" r="90" fill="pink" />
@@ -166,8 +180,8 @@ const Hero = () => {
                 <polyline points="9 6 18 6 18 15" />
               </svg>
        </div>
-      </div>
-      </a>
+      </motion.div>
+      </motion.a>
       </div>  
       <div className="bg">
        <div className="hImg">
