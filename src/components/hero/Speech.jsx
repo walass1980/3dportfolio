@@ -23,8 +23,8 @@ const Speech = () => {
           // omitDeletionAnimation
           repeat={Infinity}
         />
-        </div>
-        <img src="/man.png" alt=""/>
+      </div>
+      <img src="/man.png" alt="" />
     </motion.div>
   )
 }
