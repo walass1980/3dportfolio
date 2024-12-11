@@ -1,4 +1,3 @@
-import { animate } from "motion";
 import "./hero.css"
 import Speech from "./Speech"
 import { motion } from "motion/react";
@@ -39,10 +38,10 @@ const Hero = () => {
       <div className="hSection left">
         {/*TITLE*/}
         <motion.h1 
-        className="hTitle"
-        initial= {{y:-100, opacity:0}}
-        animate= {{y:0, opacity:1}}
-        transition={{duration:1}}
+         initial= {{y:-100, opacity:0}}
+         animate= {{y:0, opacity:1}}
+         transition={{duration:1}}
+         className="hTitle"
         >
           Hey There,
           <br />
@@ -55,13 +54,15 @@ const Hero = () => {
          animate="animate"
          className="awards"
         >
-          <h2>Top Rated Designer</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <div className="awardList">
-            <img src="/award1.png" alt="" />
-            <img src="/award2.png" alt="" />
-            <img src="/award3.png" alt="" />
-          </div>
+          <motion.h2 variants={awardVariants}>Top Rated Designer</motion.h2>
+          <motion.p variants={awardVariants}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </motion.p>
+          <motion.div variants={awardVariants} className="awardList">
+            <motion.img src="/award1.png" alt="" />
+            <motion.img src="/award2.png" alt="" />
+            <motion.img src="/award3.png" alt="" />
+          </motion.div>
         </motion.div>
         {/*SCROLL SVG */}
         <a href="#services" className="scroll">
