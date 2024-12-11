@@ -104,20 +104,25 @@ const Hero = () => {
       </div>
       <div className="hSection right">
       {/*FOLLOW */}
-      <div className="follow">
-        <a href="/">
+      <motion.div 
+       variants={followVariants}
+       initial="initial"
+       animate="animate"
+       className="follow"
+       >
+        <motion.a variants={followVariants} href="/">
          <img src="/instagram.png" alt="" />
-        </a>
-        <a href="/">
+        </motion.a>
+        <motion.a variants={followVariants} href="/">
          <img src="/facebook.png" alt="" />
-        </a>
-        <a href="/">
+        </motion.a>
+        <motion.a variants={followVariants} href="/">
          <img src="/youtube.png" alt="" />
-        </a>
+        </motion.a>
         <div className="followTextContainer">
           <div className="followText">FOLLOW ME</div>
         </div>
-      </div>
+      </motion.div>
       {/*BUBBLE */}
       <Speech />
       {/*CERTIFICATE */}
