@@ -1,5 +1,6 @@
 import "./hero.css"
 import Speech from "./Speech"
+import { motion } from "motion/react";
 
 const awardVariants = {
   initial: {
@@ -36,11 +37,15 @@ const Hero = () => {
     <div className='hero'>
       <div className="hSection left">
         {/*TITLE*/}
-        <h1 className="hTitle">
+        <motion.h1 
+        className="hTitle"
+        initial= {{x:-100, opacity:0}}
+        
+        >
           Hey There,
           <br />
           <span>I m Walid!</span>
-        </h1>
+        </motion.h1>
         {/*AWARDS*/}
         <div className="awards">
           <h2>Top Rated Designer</h2>
