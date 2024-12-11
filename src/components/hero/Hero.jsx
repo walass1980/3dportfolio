@@ -1,3 +1,4 @@
+import { animate } from "motion";
 import "./hero.css"
 import Speech from "./Speech"
 import { motion } from "motion/react";
@@ -48,7 +49,12 @@ const Hero = () => {
           <span>I m Walid!</span>
         </motion.h1>
         {/*AWARDS*/}
-        <div className="awards">
+        <motion.div 
+         variants={awardVariants}
+         initial="initial"
+         animate="animate"
+         className="awards"
+        >
           <h2>Top Rated Designer</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           <div className="awardList">
@@ -56,7 +62,7 @@ const Hero = () => {
             <img src="/award2.png" alt="" />
             <img src="/award3.png" alt="" />
           </div>
-        </div>
+        </motion.div>
         {/*SCROLL SVG */}
         <a href="#services" className="scroll">
         <svg
