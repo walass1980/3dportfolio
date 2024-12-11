@@ -129,8 +129,13 @@ const Hero = () => {
        </div>
       </div>
       </a>
-      </div>   
-      </div>
+      </div>  
+      <div className="bg">
+       <div className="hImg">
+         <img src="/hero.png" alt="" /> 
+       </div>  
+      </div> 
+    </div>
   )
 }
 
