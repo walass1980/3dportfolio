@@ -1,8 +1,8 @@
 import { Canvas } from "@react-three/fiber";
-import "./hero.css"
-import Speech from "./Speech"
-import { Shape } from "./Shap";
+import "./hero.css";
+import Speech from "./Speech";
 import { motion } from "motion/react";
+import Shape from "./Shape";
 import { Suspense } from "react";
 
 const awardVariants = {
@@ -37,29 +37,29 @@ const followVariants = {
 
 const Hero = () => {
   return (
-    <div className='hero'>
+    <div className="hero">
       <div className="hSection left">
-        {/*TITLE*/}
-        <motion.h1 
-         initial= {{y:-100, opacity:0}}
-         animate= {{y:0, opacity:1}}
-         transition={{duration:1}}
-         className="hTitle"
+        {/* TITLE */}
+        <motion.h1
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="hTitle"
         >
           Hey There,
           <br />
-          <span>I m Walid!</span>
+          <span>I'm Robert!</span>
         </motion.h1>
-        {/*AWARDS*/}
-        <motion.div 
-         variants={awardVariants}
-         initial="initial"
-         animate="animate"
-         className="awards"
+        {/* AWARDS */}
+        <motion.div
+          variants={awardVariants}
+          initial="initial"
+          animate="animate"
+          className="awards"
         >
           <motion.h2 variants={awardVariants}>Top Rated Designer</motion.h2>
           <motion.p variants={awardVariants}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </motion.p>
           <motion.div variants={awardVariants} className="awardList">
             <motion.img variants={awardVariants} src="/award1.png" alt="" />
@@ -67,18 +67,18 @@ const Hero = () => {
             <motion.img variants={awardVariants} src="/award3.png" alt="" />
           </motion.div>
         </motion.div>
-        {/*SCROLL SVG */}
-        <motion.a 
-         animate={{ y:[0, 5], opacity:[0, 1, 0] }}
-         transition={{
-          repeat:Infinity,
-          duration:4,
-          ease:"easeInOut"
-         }}
-         href="#services" 
-         className="scroll"
+        {/* SCROLL SVG */}
+        <motion.a
+          animate={{ y: [0, 5], opacity: [0, 1, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 4,
+            ease: "easeInOut",
+          }}
+          href="#services"
+          className="scroll"
         >
-        <svg
+          <svg
             width="50px"
             height="50px"
             viewBox="0 0 24 24"
@@ -102,66 +102,67 @@ const Hero = () => {
               strokeWidth="1"
               strokeLinecap="round"
             />
-        </svg>
+          </svg>
         </motion.a>
       </div>
       <div className="hSection right">
-      {/*FOLLOW */}
-      <motion.div 
-       variants={followVariants}
-       initial="initial"
-       animate="animate"
-       className="follow"
-       >
-        <motion.a variants={followVariants} href="/">
-         <img src="/instagram.png" alt="" />
-        </motion.a>
-        <motion.a variants={followVariants} href="/">
-         <img src="/facebook.png" alt="" />
-        </motion.a>
-        <motion.a variants={followVariants} href="/">
-         <img src="/youtube.png" alt="" />
-        </motion.a>
-        <motion.div variants={followVariants} className="followTextContainer">
-          <div className="followText">FOLLOW ME</div>
+        {/* FOLLOW */}
+        <motion.div
+          variants={followVariants}
+          initial="initial"
+          animate="animate"
+          className="follow"
+        >
+          <motion.a variants={followVariants} href="/">
+            <img src="/instagram.png" alt="" />
+          </motion.a>
+          <motion.a variants={followVariants} href="/">
+            <img src="/facebook.png" alt="" />
+          </motion.a>
+          <motion.a variants={followVariants} href="/">
+            <img src="/youtube.png" alt="" />
+          </motion.a>
+          <motion.div variants={followVariants} className="followTextContainer">
+            <div className="followText">FOLLOW ME</div>
+          </motion.div>
         </motion.div>
-      </motion.div>
-      {/*BUBBLE */}
-      <Speech />
-      {/*CERTIFICATE */}
-      <motion.div 
-       animate={{ opacity: [0, 1] }}
-       transition={{ duration:1 }}
-       className="certificate"
-      >
-        <img src="/certificate.png" alt="" />
-        WALASS CERTIFICATE
-        <br />
-        PROFESSIONAL
-        <br />
-        UI DESIGNER
-      </motion.div>
-      <motion.a 
-       href="/#contact" 
-       className="contactLink"
-       animate={{
-        x:[200, 0],
-        opacity:[0, 1]
-       }}
-       transition={{
-        duration:2
-       }}
-      >
-       <motion.div 
-       className="contactButton"
-       animate={{ rotate: [0, 360] }}
-       transition={{
-        duration:10,
-        repeat:Infinity,
-        ease:"linear"
-        }}
-       >
-       <svg viewBox="0 0 200 200" width="150" height="150">
+        {/* BUBBLE */}
+        <Speech />
+        {/* CERTIFICATE */}
+        <motion.div
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1 }}
+          className="certificate"
+        >
+          <img src="/certificate.png" alt="" />
+          LMA CERTIFICED
+          <br />
+          PROFESSIONAL
+          <br />
+          UI DESIGNER
+        </motion.div>
+        {/* CONTACT BUTTON */}
+        <motion.a
+          href="/#contact"
+          className="contactLink"
+          animate={{
+            x: [200, 0],
+            opacity: [0, 1],
+          }}
+          transition={{
+            duration: 2,
+          }}
+        >
+          <motion.div
+            className="contactButton"
+            animate={{ rotate: [0, 360] }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <svg viewBox="0 0 200 200" width="150" height="150">
               <circle cx="100" cy="100" r="90" fill="pink" />
               <path
                 id="innerCirclePath"
@@ -176,8 +177,8 @@ const Hero = () => {
                   Contact Me •
                 </textPath>
               </text>
-        </svg>
-        <div className="arrow">
+            </svg>
+            <div className="arrow">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -190,22 +191,23 @@ const Hero = () => {
                 <line x1="6" y1="18" x2="18" y2="6" />
                 <polyline points="9 6 18 6 18 15" />
               </svg>
-       </div>
-      </motion.div>
-      </motion.a>
-      </div>  
+            </div>
+          </motion.div>
+        </motion.a>
+      </div>
       <div className="bg">
-       <Canvas>
-        <Suspense fallback="loading...">
-          <Shape/>
-        </Suspense>
-       </Canvas>
-       <div className="hImg">
-         <img src="/hero.png" alt="" /> 
-       </div>  
-      </div> 
+        {/* 3d */}
+        <Canvas>
+          <Suspense fallback="loading...">
+            <Shape />
+          </Suspense>
+        </Canvas>
+        <div className="hImg">
+          <img src="/hero.png" alt="" />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
