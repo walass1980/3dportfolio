@@ -59,9 +59,9 @@ const Hero = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </motion.p>
           <motion.div variants={awardVariants} className="awardList">
-            <motion.img src="/award1.png" alt="" />
-            <motion.img src="/award2.png" alt="" />
-            <motion.img src="/award3.png" alt="" />
+            <motion.img variants={awardVariants} src="/award1.png" alt="" />
+            <motion.img variants={awardVariants} src="/award2.png" alt="" />
+            <motion.img variants={awardVariants} src="/award3.png" alt="" />
           </motion.div>
         </motion.div>
         {/*SCROLL SVG */}
@@ -119,9 +119,9 @@ const Hero = () => {
         <motion.a variants={followVariants} href="/">
          <img src="/youtube.png" alt="" />
         </motion.a>
-        <div className="followTextContainer">
+        <motion.div variants={followVariants} className="followTextContainer">
           <div className="followText">FOLLOW ME</div>
-        </div>
+        </motion.div>
       </motion.div>
       {/*BUBBLE */}
       <Speech />
@@ -142,7 +142,7 @@ const Hero = () => {
        href="/#contact" 
        className="contactLink"
        animate={{
-        x:[0, 200],
+        x:[200, 0],
         opacity:[0, 1]
        }}
        transition={{
