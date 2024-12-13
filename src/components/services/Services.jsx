@@ -72,11 +72,17 @@ const Services = () => {
          className="sTitle">
           How do I help us?
         </motion.h1>
-        <div className="serviceList">
+        <motion.div 
+         variants={textVariants}
+         animate={isInView ? "animate" : "initial"}
+         className="serviceList"
+        >
           {services.map((service) => (
-          <div 
-          className="service"
-          key={service.id}
+          <motion.div 
+           variants={textVariants}
+           animate={isInView ? "animate" : "initial"}
+           className="service"
+           key={service.id}
           >
             <div className="serviceIcon">
               <img src="/service1.png" alt="" />
@@ -85,9 +91,9 @@ const Services = () => {
               <h2>Lorem ipsum dolor sit amet consectetur</h2>
               <h3>3 projects</h3>
             </div>
-          </div>
+          </motion.div>
         ))}
-        </div>
+        </motion.div>
       </div>
       <div className="sSection right">
         {currentServiceId === 1 ?(
