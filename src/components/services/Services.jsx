@@ -1,7 +1,11 @@
 import "./services.css"
 import ComputerModelContainer from "./computer/ComputerModelContainer"
+import MugModelContainer from "./mug/MugModelContainer"
+import ConsoleModelContainer from "./console/ConsoleModelContainer"
+import { useState } from "react"
 
 const Services = () => {
+  const [currentServiceId, setCurrentId] = useState(1)
   return (
     <div className="services">
       <div className="sSection left">
@@ -19,7 +23,13 @@ const Services = () => {
         </div>
       </div>
       <div className="sSection right">
-        
+        {currentServiceId === 1 ?(
+          <ComputerModelContainer/>
+        ) : currentServiceId === 2 ? (
+          <MugModelContainer/>
+        ) : currentServiceId === 3 (
+          <ConsoleModelContainer/>
+        )}
       </div>
     </div>
   )
