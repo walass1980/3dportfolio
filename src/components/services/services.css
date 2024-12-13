@@ -32,4 +32,29 @@
     justify-content: center;
 }
 
+.serviceIcon {
+    width: 40px;
+    height: 48px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serviceIcon img {
+    width: 24px;
+    height: 24px;
+}
+
+.serviceInfo h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.serviceInfo h3 {
+    font-size: 13px;
+    font-weight: 300;
+}
+
 

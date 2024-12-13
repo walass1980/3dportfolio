@@ -65,7 +65,7 @@ const Services = () => {
         <div className="serviceList">
           <div className="service">
             <div className="serviceIcon">
-              <img src="" alt="" />
+              <img src="/service1.png" alt="" />
             </div>
             <div className="serviceInfo">
               <h2>Lorem ipsum dolor sit amet consectetur</h2>
