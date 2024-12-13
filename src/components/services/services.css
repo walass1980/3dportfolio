@@ -29,12 +29,12 @@
     background-color: #2f213f;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 16px;
     cursor: pointer;
 }
 
 .serviceIcon {
-    width: 40px;
+    width: 48px;
     height: 48px;
     border-radius: 100%;
     display: flex;
