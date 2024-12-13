@@ -4,6 +4,7 @@ import MugModelContainer from "./mug/MugModelContainer"
 import ConsoleModelContainer from "./console/ConsoleModelContainer"
 import { useRef, useState } from "react"
 import { motion, useInView } from "motion/react"
+import Counter from "./Counter"
 
 
 const textVariants = {
@@ -59,7 +60,7 @@ const services = [
 ]
 
 const Services = () => {
-  const [currentServiceId, setCurrentId] = useState(1)
+  const [currentServiceId, setCurrentServiceId] = useState(1)
   const ref = useRef()
   const isInView = useInView(ref, { margin: "-200px"})
 
@@ -83,6 +84,7 @@ const Services = () => {
            animate={isInView ? "animate" : "initial"}
            className="service"
            key={service.id}
+           onClick={()=> setCurrentServiceId(service.id)}
           >
             <div className="serviceIcon">
               <img src={service.img} alt="" />
@@ -94,6 +96,10 @@ const Services = () => {
           </motion.div>
         ))}
         </motion.div>
+      <div className="counterList">
+        <Counter from={0} to={104} text="Projets Completed"/>
+        <Counter from={0} to={72} text="Happy Clients"/>
+      </div>
       </div>
       <div className="sSection right">
         {currentServiceId === 1 ?(
