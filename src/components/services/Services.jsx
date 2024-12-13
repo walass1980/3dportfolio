@@ -2,7 +2,8 @@ import "./services.css"
 import ComputerModelContainer from "./computer/ComputerModelContainer"
 import MugModelContainer from "./mug/MugModelContainer"
 import ConsoleModelContainer from "./console/ConsoleModelContainer"
-import { useState } from "react"
+import { useRef, useState } from "react"
+import { useInView } from "motion/react"
 
 const textVariants = {
   initial: {
@@ -58,6 +59,9 @@ const services = [
 
 const Services = () => {
   const [currentServiceId, setCurrentId] = useState(1)
+  const ref = useRef()
+  const useInView = useInView(ref, { margin: "-200px"})
+
   return (
     <div className="services">
       <div className="sSection left">
