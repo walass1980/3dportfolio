@@ -1,11 +1,10 @@
-import "./services.css"
-import ComputerModelContainer from "./computer/ComputerModelContainer"
-import MugModelContainer from "./mug/MugModelContainer"
-import ConsoleModelContainer from "./console/ConsoleModelContainer"
-import { useRef, useState } from "react"
-import { motion, useInView } from "motion/react"
-import Counter from "./Counter"
-
+import ComputerModelContainer from "./computer/ComputerModelContainer";
+import ConsoleModelContainer from "./console/ConsoleModelContainer";
+import Counter from "./Counter";
+import MugModelContainer from "./mug/MugModelContainer";
+import "./services.css";
+import { motion, useInView } from "motion/react";
+import { useRef, useState } from "react";
 
 const textVariants = {
   initial: {
@@ -13,30 +12,30 @@ const textVariants = {
     y: -100,
     opacity: 0,
   },
-  animate:{
+  animate: {
     x: 0,
     y: 0,
     opacity: 1,
     transition: {
       duration: 1,
-    }
-  }
-}
+    },
+  },
+};
 
 const listVariants = {
-  initial:{
+  initial: {
     x: -100,
     opacity: 0,
   },
-  animate:{
+  animate: {
     x: 0,
     opacity: 1,
     transition: {
       duration: 1,
       staggerChildren: 0.5,
-    }
-  }
-}
+    },
+  },
+};
 
 const services = [
   {
@@ -48,7 +47,7 @@ const services = [
   {
     id: 2,
     img: "/service2.png",
-    title: "Product Deseign",
+    title: "Product Design",
     counter: 23,
   },
   {
@@ -57,61 +56,61 @@ const services = [
     title: "Branding",
     counter: 46,
   },
-]
+];
 
 const Services = () => {
-  const [currentServiceId, setCurrentServiceId] = useState(1)
-  const ref = useRef()
-  const isInView = useInView(ref, { margin: "-200px"})
-
+  const [currentServiceId, setCurrentServiceId] = useState(1);
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-200px" });
   return (
     <div className="services" ref={ref}>
       <div className="sSection left">
-        <motion.h1 
-         variants={textVariants}
-         animate={isInView ? "animate" : "initial"}
-         className="sTitle">
-          How do I help us?
+        <motion.h1
+          variants={textVariants}
+          animate={isInView ? "animate" : "initial"}
+          className="sTitle"
+        >
+          How do I help?
         </motion.h1>
-        <motion.div 
-         variants={listVariants}
-         animate={isInView ? "animate" : "initial"}
-         className="serviceList"
+        <motion.div
+          variants={listVariants}
+          animate={isInView ? "animate" : "initial"}
+          className="serviceList"
         >
           {services.map((service) => (
-          <motion.div 
-           variants={listVariants}
-           animate={isInView ? "animate" : "initial"}
-           className="service"
-           key={service.id}
-           onClick={()=> setCurrentServiceId(service.id)}
-          >
-            <div className="serviceIcon">
-              <img src={service.img} alt="" />
-            </div>
-            <div className="serviceInfo">
-              <h2>{service.title}</h2>
-              <h3>3 projects</h3>
-            </div>
-          </motion.div>
-        ))}
+            <motion.div
+              variants={listVariants}
+              className="service"
+              key={service.id}
+              onClick={() => setCurrentServiceId(service.id)}
+            >
+              <div className="serviceIcon">
+                <img src={service.img} alt="" />
+              </div>
+              <div className="serviceInfo">
+                <h2>{service.title}</h2>
+                <h3>{service.counter} Projects</h3>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
-      <div className="counterList">
-        <Counter from={0} to={104} text="Projets Completed"/>
-        <Counter from={0} to={72} text="Happy Clients"/>
-      </div>
+        <div className="counterList">
+          <Counter from={0} to={104} text="Projects Completed" />
+          <Counter from={0} to={72} text="Happy Clients" />
+        </div>
       </div>
       <div className="sSection right">
-        {currentServiceId === 1 ?(
-          <ComputerModelContainer/>
+        {currentServiceId === 1 ? (
+          <ComputerModelContainer />
         ) : currentServiceId === 2 ? (
-          <MugModelContainer/>
-        ) : currentServiceId === 3 (
-          <ConsoleModelContainer/>
+          <MugModelContainer />
+        ) : (
+          <ConsoleModelContainer />
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;
+
