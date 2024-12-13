@@ -73,13 +73,13 @@ const Services = () => {
           How do I help us?
         </motion.h1>
         <motion.div 
-         variants={textVariants}
+         variants={listVariants}
          animate={isInView ? "animate" : "initial"}
          className="serviceList"
         >
           {services.map((service) => (
           <motion.div 
-           variants={textVariants}
+           variants={listVariants}
            animate={isInView ? "animate" : "initial"}
            className="service"
            key={service.id}
