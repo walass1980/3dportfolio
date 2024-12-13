@@ -3,7 +3,8 @@ import ComputerModelContainer from "./computer/ComputerModelContainer"
 import MugModelContainer from "./mug/MugModelContainer"
 import ConsoleModelContainer from "./console/ConsoleModelContainer"
 import { useRef, useState } from "react"
-import { useInView } from "motion/react"
+import { motion, useInView } from "motion/react"
+
 
 const textVariants = {
   initial: {
@@ -60,14 +61,23 @@ const services = [
 const Services = () => {
   const [currentServiceId, setCurrentId] = useState(1)
   const ref = useRef()
-  const useInView = useInView(ref, { margin: "-200px"})
+  const isInView = useInView(ref, { margin: "-200px"})
 
   return (
-    <div className="services">
+    <div className="services" ref={ref}>
       <div className="sSection left">
-        <h1 className="sTitle">How do I help us?</h1>
+        <motion.h1 
+         variants={textVariants}
+         animate={isInView ? "animate" : "initial"}
+         className="sTitle">
+          How do I help us?
+        </motion.h1>
         <div className="serviceList">
-          <div className="service">
+          {services.map((service) => (
+          <div 
+          className="service"
+          key={service.id}
+          >
             <div className="serviceIcon">
               <img src="/service1.png" alt="" />
             </div>
@@ -76,6 +86,7 @@ const Services = () => {
               <h3>3 projects</h3>
             </div>
           </div>
+        ))}
         </div>
       </div>
       <div className="sSection right">
