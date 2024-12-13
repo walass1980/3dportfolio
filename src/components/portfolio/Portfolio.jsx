@@ -38,6 +38,22 @@ const items = [
   },
 ];
 
+const ListItem = ({ item }) => {
+  return (
+    <div className="pItem">
+      <div className="pImg">
+        <img src={item.img} alt="" />
+      </div>
+      <div className="pText">
+        <h1>{item.title}</h1>
+        <p>{item.desc}</p>
+        <a href={item.link}>
+          <button>View Project</button>
+        </a>
+      </div>
+    </div>
+  )
+}
 
 const Portfolio = () => {
   return (
