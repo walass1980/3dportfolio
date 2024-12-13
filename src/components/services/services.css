@@ -10,3 +10,10 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.sTitle {
+    font-size: 88px;
+    margin-bottom: 24px;
+}
+
+
