@@ -4,6 +4,37 @@ import MugModelContainer from "./mug/MugModelContainer"
 import ConsoleModelContainer from "./console/ConsoleModelContainer"
 import { useState } from "react"
 
+const textVariants = {
+  initial: {
+    x: -100,
+    y: -100,
+    opacity: 0,
+  },
+  animate:{
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+    }
+  }
+}
+
+const listVariants = {
+  initial:{
+    x: -100,
+    opacity: 0,
+  },
+  animate:{
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5,
+    }
+  }
+}
+
 const Services = () => {
   const [currentServiceId, setCurrentId] = useState(1)
   return (
