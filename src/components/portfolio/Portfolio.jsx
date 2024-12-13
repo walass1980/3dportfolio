@@ -1,4 +1,5 @@
 import "./portfolio.css"
+import { motion } from "motion/react"
 
 const items = [
   {
@@ -38,12 +39,47 @@ const items = [
   },
 ];
 
+const imgVariants = {
+  initial: {
+    x: -500,
+    y: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    }
+  }
+}
+
+const textVariants = {
+  initial: {
+    x: 500,
+    y: 500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+      staggerChildren: 0.05,
+    }
+  }
+}
+
 const ListItem = ({ item }) => {
   return (
     <div className="pItem">
-      <div className="pImg">
+      <motion.div className="pImg">
         <img src={item.img} alt="" />
-      </div>
+      </motion.div>
       <div className="pText">
         <h1>{item.title}</h1>
         <p>{item.desc}</p>
@@ -60,6 +96,9 @@ const Portfolio = () => {
     <div className="portfolio">
       <div className="pList">
         <div className="empty"/>
+        {items.map((item)=> (
+          <ListItem item={item} key={item.id}/>
+        ))}
       </div>
       <section/>
       <section/>
