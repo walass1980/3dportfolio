@@ -16,4 +16,20 @@
     margin-bottom: 24px;
 }
 
+.serviceList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.service {
+    width: 50%;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #2f213f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
