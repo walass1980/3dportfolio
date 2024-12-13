@@ -85,10 +85,10 @@ const Services = () => {
            key={service.id}
           >
             <div className="serviceIcon">
-              <img src="/service1.png" alt="" />
+              <img src={service.img} alt="" />
             </div>
             <div className="serviceInfo">
-              <h2>Lorem ipsum dolor sit amet consectetur</h2>
+              <h2>{service.title}</h2>
               <h3>3 projects</h3>
             </div>
           </motion.div>
