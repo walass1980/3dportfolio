@@ -79,7 +79,7 @@ const ListItem = ({ item }) => {
   const ref = useRef()
   const isInView = useInView(ref, {margin: "-100px"})
   return (
-    <div className="pItem">
+    <div className="pItem" ref={ref}>
       <motion.div className="pImg">
         <img src={item.img} alt="" />
       </motion.div>
