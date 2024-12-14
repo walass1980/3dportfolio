@@ -1,5 +1,6 @@
+import { useRef } from "react";
 import "./portfolio.css"
-import { motion } from "motion/react"
+import { motion, useInView } from "motion/react"
 
 const items = [
   {
@@ -75,6 +76,8 @@ const textVariants = {
 }
 
 const ListItem = ({ item }) => {
+  const ref = useRef()
+  const isInView = useInView(ref, {margin: "-100px"})
   return (
     <div className="pItem">
       <motion.div className="pImg">
