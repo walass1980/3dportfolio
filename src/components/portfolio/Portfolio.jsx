@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./portfolio.css"
 import { motion, useInView } from "motion/react"
 
@@ -103,8 +103,12 @@ const ListItem = ({ item }) => {
 }
 
 const Portfolio = () => {
+  const ref = useRef(null)
+  const [ContainerDistance, setContainerDistance] = useState(0)
   return (
-    <div className="portfolio">
+    <div className="portfolio" 
+     ref={ref}
+    >
       <div className="pList">
         <div className="empty"/>
         {items.map((item)=> (
@@ -133,6 +137,7 @@ const Portfolio = () => {
             fill="none"
             stroke="#dd4c62"
             strokeWidth={20}
+            style={{ pathLength: scrollYProgress }}
             transform="rotate(-90 80 80)"
           />
         </svg>
