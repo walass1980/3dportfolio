@@ -92,11 +92,11 @@ const ListItem = ({ item }) => {
        animate={isInView ? "animate" : "initial"}
        className="pText"
       >
-        <h1>{item.title}</h1>
-        <p>{item.desc}</p>
-        <a href={item.link}>
+        <motion.h1 variants={textVariants}>{item.title}</motion.h1>
+        <motion.p variants={textVariants}>{item.desc}</motion.p>
+        <motion.a variants={textVariants} href={item.link}>
           <button>View Project</button>
-        </a>
+        </motion.a>
       </motion.div>
     </div>
   )
