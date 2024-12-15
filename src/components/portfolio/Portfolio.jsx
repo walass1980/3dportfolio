@@ -1,6 +1,7 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./portfolio.css"
-import { motion, useInView } from "motion/react"
+import { motion, useInView, useTransform } from "motion/react"
+import { useScroll } from "@react-three/drei";
 
 const items = [
   {
@@ -105,6 +106,32 @@ const ListItem = ({ item }) => {
 const Portfolio = () => {
   const ref = useRef(null)
   const [ContainerDistance, setContainerDistance] = useState(0)
+
+  useEffect(()=> {
+    const calculateDistance = ()=> {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientREct()
+        setContainerDistance(rect.left)
+      }
+    }
+
+    calculateDistance()
+
+    window.addEventListener("resize", calculateDistance)
+
+    return ()=> {
+      window.removeEventListener("resize", calculateDistance)
+    }
+  }, [])
+
+  const { scrollYProgress } = useScroll({ target: ref})
+  
+  const xTranslate = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, -window.innerWidth * items.length]
+  )
+
   return (
     <div className="portfolio" 
      ref={ref}
