@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./portfolio.css"
-import { motion, useInView, useTransform } from "motion/react"
-import { useScroll } from "@react-three/drei";
+import { motion, useInView, useTransform, useScroll } from "motion/react"
 
 const items = [
   {
