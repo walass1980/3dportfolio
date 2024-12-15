@@ -20,3 +20,20 @@
     justify-content: center;
     gap: 100px;
 }
+
+.pItem:nth-child(3) {
+    background: linear-gradient(to right, transparent, #02222e);
+}
+
+.pItem:nth-child(4) {
+    background: linear-gradient(to right, #0260622e, #02222e);
+}
+
+.pItem:nth-child(5) {
+    background: linear-gradient(to right, #0260622e, #12071f);
+}
+
+.pItem:nth-child(6) {
+    background: linear-gradient(to right, #12071f, transparent);
+}
+
