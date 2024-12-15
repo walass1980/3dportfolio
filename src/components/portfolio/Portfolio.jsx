@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import "./portfolio.css"
-import { motion, useInView, useTransform, useScroll } from "motion/react"
+import "./portfolio.css";
+import { motion, useInView, useScroll, useTransform } from "motion/react";
 
 const items = [
   {
@@ -43,7 +43,7 @@ const items = [
 const imgVariants = {
   initial: {
     x: -500,
-    y: -500,
+    y: 500,
     opacity: 0,
   },
   animate: {
@@ -53,9 +53,9 @@ const imgVariants = {
     transition: {
       duration: 0.5,
       ease: "easeInOut",
-    }
-  }
-}
+    },
+  },
+};
 
 const textVariants = {
   initial: {
@@ -71,26 +71,28 @@ const textVariants = {
       duration: 0.5,
       ease: "easeInOut",
       staggerChildren: 0.05,
-    }
-  }
-}
+    },
+  },
+};
 
 const ListItem = ({ item }) => {
-  const ref = useRef()
-  const isInView = useInView(ref, {margin: "-100px"})
+  const ref = useRef();
+
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
     <div className="pItem" ref={ref}>
-      <motion.div 
-       variants={imgVariants}
-       animate={isInView ? "animate" : "initial"}
-       className="pImg"
+      <motion.div
+        variants={imgVariants}
+        animate={isInView ? "animate" : "initial"}
+        className="pImg"
       >
         <img src={item.img} alt="" />
       </motion.div>
-      <motion.div 
-       variants={textVariants}
-       animate={isInView ? "animate" : "initial"}
-       className="pText"
+      <motion.div
+        variants={textVariants}
+        animate={isInView ? "animate" : "initial"}
+        className="pText"
       >
         <motion.h1 variants={textVariants}>{item.title}</motion.h1>
         <motion.p variants={textVariants}>{item.desc}</motion.p>
@@ -99,60 +101,67 @@ const ListItem = ({ item }) => {
         </motion.a>
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 const Portfolio = () => {
-  const ref = useRef(null)
-  const [ContainerDistance, setContainerDistance] = useState(0)
+  const [containerDistance, setContainerDistance] = useState(0);
+  const ref = useRef(null);
 
-  useEffect(()=> {
-    const calculateDistance = ()=> {
+  // useEffect(() => {
+  //   if (ref.current) {
+  //     const rect = ref.current.getBoundingClientRect();
+  //     setContainerDistance(rect.left);
+  //   }
+  // }, []);
+
+  // FIX: Re-calculate when screen size changes
+  useEffect(() => {
+    const calculateDistance = () => {
       if (ref.current) {
-        const rect = ref.current.getBoundingClientREct()
-        setContainerDistance(rect.left)
+        const rect = ref.current.getBoundingClientRect();
+        setContainerDistance(rect.left);
       }
-    }
+    };
 
-    calculateDistance()
+    calculateDistance();
 
-    window.addEventListener("resize", calculateDistance)
+    window.addEventListener("resize", calculateDistance);
 
-    return ()=> {
-      window.removeEventListener("resize", calculateDistance)
-    }
-  }, [])
+    return () => {
+      window.removeEventListener("resize", calculateDistance);
+    };
+  }, []);
 
-  const { scrollYProgress } = useScroll({ target: ref})
-  
+  const { scrollYProgress } = useScroll({ target: ref });
+
   const xTranslate = useTransform(
     scrollYProgress,
     [0, 1],
     [0, -window.innerWidth * items.length]
-  )
+  );
 
   return (
-    <div className="portfolio" 
-     ref={ref}
-    >
+    <div className="portfolio" ref={ref}>
       <motion.div className="pList" style={{ x: xTranslate }}>
-        <div 
-         className="empty"
-         style={{
-          width: window.innerWidth - ContainerDistance,
-         }}
-         />
-        {items.map((item)=> (
-          <ListItem item={item} key={item.id}/>
+        <div
+          className="empty"
+          style={{
+            width: window.innerWidth - containerDistance,
+            // backgroundColor: "pink",
+          }}
+        />
+        {items.map((item) => (
+          <ListItem item={item} key={item.id} />
         ))}
       </motion.div>
-      <section/>
-      <section/>
-      <section/>
-      <section/>
-      <section/>
+      <section />
+      <section />
+      <section />
+      <section />
+      <section />
       <div className="pProgress">
-      <svg width="100%" height="100%" viewBox="0 0 160 160">
+        <svg width="100%" height="100%" viewBox="0 0 160 160">
           <circle
             cx="80"
             cy="80"
@@ -174,7 +183,7 @@ const Portfolio = () => {
         </svg>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;
