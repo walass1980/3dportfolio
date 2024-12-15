@@ -136,12 +136,17 @@ const Portfolio = () => {
     <div className="portfolio" 
      ref={ref}
     >
-      <div className="pList">
-        <div className="empty"/>
+      <motion.div className="pList" style={{ x: xTranslate }}>
+        <div 
+         className="empty"
+         style={{
+          width: window.innerWidth - ContainerDistance,
+         }}
+         />
         {items.map((item)=> (
           <ListItem item={item} key={item.id}/>
         ))}
-      </div>
+      </motion.div>
       <section/>
       <section/>
       <section/>
