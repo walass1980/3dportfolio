@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import "./contact.css"
 import ContactSvg from "./ContactSvg"
-import { form } from 'motion/react-client';
 
 const listVariant = {
   initial: {
@@ -22,6 +21,9 @@ const listVariant = {
 const Contact = () => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
+
+  const ref = useRef()
+  const form = useRef()
   
   const sendEmail = (e) => {
     e.preventDefault()
