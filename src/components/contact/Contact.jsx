@@ -1,7 +1,8 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import "./contact.css"
 import ContactSvg from "./ContactSvg"
+import { form } from 'motion/react-client';
 
 const listVariant = {
   initial: {
@@ -19,7 +20,34 @@ const listVariant = {
 }
 
 const Contact = () => {
-  const 
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
+  
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+    .sendForm(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      form.current,
+      {
+        publicKey: import.meta.env.VITE_PUBLIC_KEY,
+      }
+    )
+    .then(
+      () => {
+        setSuccess(true)
+        setError(false)
+      },
+      (error) => {
+        console.log(error)
+        setError(true)
+        setSuccess(false)
+      }
+    )
+  }
+
   return (
     <div className="contact">
       <div className="cSection">
