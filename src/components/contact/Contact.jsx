@@ -72,7 +72,7 @@ const Contact = () => {
             <label>Email</label>
             <input 
              type="email" 
-             name="user_name"
+             name="user_email"
              placeholder="john@gmail.com"
             />
           </motion.div>
